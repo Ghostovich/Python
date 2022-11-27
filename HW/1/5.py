@@ -8,7 +8,5 @@ A1 = int(input('Введите A(x):'))
 A2 = int(input('Введите A(y):'))
 B1 = int(input('Введите B(x):'))
 B2 = int(input('Введите B(y):'))
-S1 = (B1-A1)**2
-S2 = (B2-A2)**2
-S = round((S1+S2)**0,5, 2)
+S = round(pow((pow(B1-A1,2)+pow(B2-A2, 2)), 0.5), 3)
 print(S)
