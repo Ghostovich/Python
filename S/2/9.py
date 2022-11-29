@@ -5,18 +5,20 @@
 # 9
 # 0	                    5.666666666666667
 
+# count = 0
+# sum = 0
+# A = None
+# while A != 0:
+#     A = int(input('Введите число:'))
+#     count += 1
+#     sum+=A
+# count-=1
+# print(round(sum/count, 2))
 
 
-A = input('Введите 1:')
-B = input('Введите 2:')
-
-
-
-count = 0
-i = 0
-while i < len(A):
-    if A[i:i+len(B)] == B:
-        count += 1
-        i += (len(B)-1)
-    i += 1
-print(count)
+A = None
+sp = []
+while A != 0:
+    A = int(input('Введите число:'))
+    sp.append(A)
+print(round(sum(sp)/(len(sp) - 1), 2))
