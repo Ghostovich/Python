@@ -2,15 +2,8 @@
 # и выведите на экран их сумму.
 
 
-num1 = int(input('Введите X:'))
-num2 = int(input('Введите Y:'))
-if num1>0 and num2>0:
-    print("1")
-elif num1<0 and num2>0:
-    print('2')
-elif num1<0 and num2<0:
-    print('3')
-elif num1>0 and num2<0:
-    print('4')
-else:
-    print("Неверно!")
+n = int(input('Введите n:'))
+s=0
+for i in range(1, n):
+    s += (1+(1/i))**i
+print(s)

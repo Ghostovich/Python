@@ -1,9 +1,7 @@
 # Реализуйте алгоритм перемешивания списка
 # (shuffle использовать нельзя, другие методы из библиотеки random - можно).
+import random
 
-A1 = int(input('Введите A(x):'))
-A2 = int(input('Введите A(y):'))
-B1 = int(input('Введите B(x):'))
-B2 = int(input('Введите B(y):'))
-S = round(pow((pow(B1-A1,2)+pow(B2-A2, 2)), 0.5), 3)
-print(S)
+sp = [1, 2, 3, 4]
+spn = sorted(sp, key=lambda A: random.random())
+print(spn)
