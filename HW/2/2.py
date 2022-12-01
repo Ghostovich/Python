@@ -3,8 +3,8 @@
 # Пример:
 # - пусть N = 4, тогда [ 1, 2, 6, 24 ] (1, 1*2, 1*2*3, 1*2*3*4)
 
-for i in range(2):
-    for j in range(2):
-        for k in range(2):
-            i or j or k == i and j and k
-            print('true')
+N = input('Введите число:')
+P = None
+for i in range(1, len(N)-1):
+    P = i*1
+    print(P)
