@@ -6,7 +6,9 @@
 
 
 N = input('Введите число:')
-Sum = None
-for i in range(len(N)-1):
-    Sum += N[i]
+Sum = 0
+i = 0
+for i in range(0, int(len(N))):
+    if N[i] != '.':
+        Sum += int(N[i])
 print(Sum)

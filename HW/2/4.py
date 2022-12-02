@@ -1,16 +1,16 @@
-# Задайте список из N элементов, заполненных числами из промежутка [-N, N]. 
-# Найдите произведение элементов на указанных позициях. 
+# Задайте список из N элементов, заполненных числами из промежутка [-N, N].
+# Найдите произведение элементов на указанных позициях.
 # Позиции хранятся в файле file.txt в одной строке одно число.
 
-
-num = int(input('Введите число:'))
-if num == 1:
-    print("x>0, y>0")
-elif num == 2:
-    print("x<0, y>0")
-elif num == 3:
-    print("x<0, y<0")
-elif num == 4:
-    print("x>0, y<0")
-else:
-    print("Неверно!")
+N = int(input('Введите число:'))
+sp = []
+for i in range(-N, N+1):
+    sp.append(i)
+print(sp)
+path = 'HW/2/file.txt'
+data = open(path, 'r')
+for line in data:
+    A = int(line[0])
+    B = int(line[1])
+    print(sp[A]*sp[B])
+data.close()
