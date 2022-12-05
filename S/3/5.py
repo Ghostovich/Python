@@ -9,12 +9,23 @@
 # •	список: [], ищем: "123", ответ: -1
 
 
-number1 = int(input('Введите число 1:'))
-number2 = int(input('Введите число 2:'))
-number3 = int(input('Введите число 3:'))
-if number1 == number2 == number3:
-    print('3')
-elif number1 == number2 or number2 == number3 or number1 == number3:
-    print('2')
-else:
-    print("0")
+sp = []
+count = 0
+f = 0
+print('Введите строку:')
+for i in range(5):
+    sp.append(input())
+print(sp)
+N = input('Поиск:')
+for i in range(5):
+    if N in sp[i]:
+        count+=1
+        if count ==2:
+            print(i+1)
+            break
+    else:
+        continue
+if count<2:
+    print('-1')
+
+

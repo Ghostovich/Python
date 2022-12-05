@@ -6,13 +6,11 @@
 # Входные данные	Выходные данные
 # 1 2 2 3 3 3	        1
 
+sp = [1, 2, 2, 3, 3, 3]
+spn = []
+for i in sp:
+    if sp.count(i) == 1:
+        spn.append(i)
+print(*spn)
 
-number1 = int(input('Введите число 1:'))
-number2 = int(input('Введите число 2:'))
-number3 = int(input('Введите число 3:'))
-if number1 == number2 == number3:
-    print('3')
-elif number1 == number2 or number2 == number3 or number1 == number3:
-    print('2')
-else:
-    print("0")
+# * - без скобок

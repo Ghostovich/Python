@@ -4,17 +4,24 @@
 # - [2, 3, 4, 5, 6] => [12, 15, 16];
 # - [2, 3, 5, 6] => [12, 15]
 
-N = int(input('Введите число:'))
-P = 1
-# print(P)
-i = 1
-while i <= N:
-    if i == 1:
-        P = i*1
-        i += 1
+sp = []
+pr = 0
+spn = []
+n = int(input('Введите количество элементов:'))
+print('Введите данные:')
+for i in range(n):
+    sp.append(int(input()))
+print(sp)
+for i in range(int(len(sp)/2)):
+    if len(sp)%2 == 1:
+        pr=sp[i]*sp[-i-1]
+        spn.append(pr)
     else:
-        P *= i
-        i+=1
-    print(P)
+        pr=sp[i]*sp[-i-1]
+        spn.append(pr)
+if len(sp)%2 == 1:
+    se = sp[int(len(sp)/2)] * sp[int(len(sp)/2)]
+    spn.append(se)
+print(spn)
     
     
