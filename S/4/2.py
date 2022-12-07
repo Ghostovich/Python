@@ -2,11 +2,16 @@
 # 1.	с помощью математических формул нахождения корней квадратного уравнения
 # 2.	с помощью дополнительных библиотек Python
 
+import math
+A, B, C = [int(i) for i in input("Введите значения:").split()]
+d = B**2 - 4*A*C
+if d>0:
+    x1 = (-B - math.sqrt(d))/2*A
+    x2 = (-B + math.sqrt(d))/2*A
+    print(f"корни: {x1}, {x2}")
+elif d == 0:
+    x = (-B/2)*A
+    print(f"корни: {x}")
+else:
+    print("корней нет")
 
-
-sp = [1, 5, 2, 4, 3]
-for i in range(len(sp)-1):
-    if sp[i] > sp[i+1]:
-        print(sp[i])
-    else:
-        continue
