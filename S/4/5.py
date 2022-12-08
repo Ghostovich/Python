@@ -11,23 +11,18 @@
 
 
 
-sp = []
-count = 0
-f = 0
-print('Введите строку:')
-for i in range(5):
-    sp.append(input())
-print(sp)
-N = input('Поиск:')
-for i in range(5):
-    if N in sp[i]:
-        count+=1
-        if count ==2:
-            print(i+1)
-            break
-    else:
-        continue
-if count<2:
-    print('-1')
+slov = {}
+slov['Hello'] = 'Hi'
+slov['Bye'] = 'Goodbye'
+slov['List'] = 'Array'
 
-
+print(slov)
+n = input('Введите слово:')
+# print(slov.keys())
+# print(slov.values())
+for key, value in slov.items():
+    if n == key:
+        print(value)
+    if n == value:
+        print(key)
+        
