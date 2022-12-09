@@ -1,23 +1,18 @@
 # Задайте натуральное число N. Напишите программу, которая составит список простых множителей числа N.
 
+n = int(input('Введите число:'))
 sp = []
-pr = 0
-spn = []
-n = int(input('Введите количество элементов:'))
-print('Введите данные:')
-for i in range(n):
-    sp.append(int(input()))
-print(sp)
-for i in range(int(len(sp)/2)):
-    if len(sp)%2 == 1:
-        pr=sp[i]*sp[-i-1]
-        spn.append(pr)
+
+i = 2
+while i*i<=n:
+    if n%i == 0:
+        sp.append(i)
+        n = n//i
     else:
-        pr=sp[i]*sp[-i-1]
-        spn.append(pr)
-if len(sp)%2 == 1:
-    se = sp[int(len(sp)/2)] * sp[int(len(sp)/2)]
-    spn.append(se)
-print(spn)
+        i+=1
+if n>1:
+    sp.append(n)
+print(sp)
+
     
     
