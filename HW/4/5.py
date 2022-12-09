@@ -1,22 +1,41 @@
 # Даны два файла, в каждом из которых находится запись многочлена.
 # Задача - сформировать файл, содержащий сумму многочленов.
 
-N = int(input('Введите число:'))
+print()
+sp1 = []
+sp2 = []
 sp = []
-spn = []
 
-f = 0
-sp.append(f)
-s = 1
-sp.append(s)
-for i in range(2, N+1):
-    sp.append(sp[i-1]+sp[i-2])
+path = 'HW/4/file1.txt'
+data = open(path, 'r')
+for line in data:
+    A = str(line).split(' ')
+    print(A)
+data.close()
 
-fm1 = 1
-spn.append(fm1)
 
-for i in range(2, N+1):
-    spn.append(((-1)**(i+1))*sp[i])
-spn.reverse()
+print()
 
-print(spn+sp)
+path = 'HW/4/file2.txt'
+data = open(path, 'r')
+for line in data:
+    B = str(line).split(' ')
+    print(B)
+data.close()
+
+print()
+
+i = 0
+while i < len(A)-4:
+    C = int(A[i])+int(B[i])
+    C = str(f'{C} ')
+    sp.append(C)
+    i+=2
+print(sp)
+
+path = 'HW/4/file3.txt'
+data = open(path, 'w')
+data.writelines(sp)
+data.close()
+
+print()
