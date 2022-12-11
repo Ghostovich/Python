@@ -5,17 +5,13 @@
 # triangle(7, 6, 10)
 # 	                            Это треугольник
 
+a = 5
+b = 4
+c = 3
 
-import math
-A, B, C = [int(i) for i in input("Введите значения:").split()]
-d = B**2 - 4*A*C
-if d>0:
-    x1 = (-B - math.sqrt(d))/2*A
-    x2 = (-B + math.sqrt(d))/2*A
-    print(f"корни: {x1}, {x2}")
-elif d == 0:
-    x = (-B/2)*A
-    print(f"корни: {x}")
-else:
-    print("корней нет")
+def triangle(a, b, c):
+    if a+b>c and b+c>a and c+a>b:
+        return True
+    return False
 
+print(triangle(a, b, c))

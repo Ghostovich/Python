@@ -2,16 +2,24 @@
 # При решении задачи используйте комбинацию функций filter, map, sum.
 # Обратите внимание: на 9 должно делиться исходное двузначное число, а не его квадрат.
 
+# array = [i for i in range(10, 100) i**2+sum]
 
-N1, N2 = [int(i) for i in input('Введите данные:').split()]
-N3 = 0
-max = max(N1, N2)
-if max%N1 == 0 and max%N2 == 0:
-    print(max)
-else:
-    for N3 in range(2, min(N1, N2)+1):
-        if (max*N3)%N1 == 0 and (max*N3)%N2 == 0:
-            print(max*N3) 
-            break
- 
+# list = []
 
+# for i in range(10, 100):
+#     if i%9==0:
+#         list.append(i)
+# print(list)
+
+
+
+
+# sp = [i**2 for i in range(10, 100) if i % 9 == 0]
+# print(sum(sp))
+
+
+
+
+
+res = list(map(lambda x: x**2, filter(lambda i: i % 9 == 0, range(10, 100))))
+print(sum(res))

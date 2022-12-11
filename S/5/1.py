@@ -4,6 +4,14 @@
 # Входные данные	    Выходные данные
 # 1 2 3 5 6 7 8 	        4
 
+path = 'S/5/1.txt'
 
-sp = [int(i) for i in input().split()]
-print(max(sp), min(sp), sep=' ')
+data = open(path, 'r')
+a = data.read().split()
+a = list(map(int, a))
+print(a)
+data.close()
+
+for i in range(1, len(a)):
+    if a[i] != a[i-1]+1:
+        print(a[i-1]+1)
