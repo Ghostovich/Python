@@ -6,15 +6,7 @@
 #                         **********
 #                         ********
 
+num = input('Введите данные:').split()
 
-path = 'S/5/1.txt'
-
-data = open(path, 'r')
-a = data.read().split()
-a = list(map(int, a))
-print(a)
-data.close()
-
-for i in range(1, len(a)):
-    if a[i] != a[i-1]+1:
-        print(a[i-1]+1)
+for i in range(len(num)):
+    print('*' * int(num[i]))

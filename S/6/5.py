@@ -17,11 +17,19 @@
 #                                     9 - Сунул
 
 
-
-a = ('1', "a", 'b', '2', '3', 'c')
-
-res1 = list(filter(lambda x: x.isdigit(), a))
-res2 = list(filter(lambda x: x.isalpha(), a))
-print(res1)
-print(res2)
-
+sp = ['Ехал Грека через реку.', 'Видит Грека в реке рак.', 'Сунул в реку руку Грека.', 'Рак за руку Греку цап.']
+spn = list(enumerate(sp))
+res = []
+print(spn)
+for s in sp:
+    res.extend(s.replace('.', '').split())
+res = list(enumerate(res))
+res.sort(key = lambda x: x[1])
+res = list(filter(lambda x: x[1][0].isupper(), res))
+result = []
+for s in res:
+    if s[1] not in result:
+        result.append(s[1])
+        print(f'{s[0]}-{s[1]}')
+    else:
+        continue

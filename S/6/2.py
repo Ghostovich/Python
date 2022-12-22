@@ -10,14 +10,11 @@
 #                             шесть
 #                             четыре
 
+sp = []
+n = int(input('Введите количество строк: '))
+for i in range (n):
+    st = input(f'Введите {i+1} строку: ')
+    sp.append(st)
 
-a = 5
-b = 4
-c = 3
-
-def triangle(a, b, c):
-    if a+b>c and b+c>a and c+a>b:
-        return True
-    return False
-
-print(triangle(a, b, c))
+sp.sort(key = lambda x: len(x))
+print(*sp, sep = '\n')
