@@ -16,126 +16,52 @@
 # ООООООРРРОРОРРРРРРР                                        7
 # ООООРРРРОРОРРРРРРРРООРОРОРРРРРРРРРРРРРРРРРРРРРРРРРРРРРРР      31
 
-import random
 
-can = int(input('Количество конфет: '))
-pl = int(input('Количество игроков(1 или 2): '))
-ro = int(input('Орел(1) или решка(2)? '))
-ro1 = random.randint(1, 2)
+# path = 'HW/5/1.txt'
+# data = open(path, 'r')
+# for line in data:
+#     a = list(line)
+# data.close()
 
-
-if pl == 2:
-    if ro == ro1:
-
-        while can > 0:
-
-            n1 = int(input('Ход первого игрока: '))
-            can -= n1
-            print(f'Остаток: {can}')
-            if can == 0:
-                print('Победил первый игрок!')
-                break
-
-            n2 = int(input('Ход второго игрока: '))
-            can -= n2
-            print(f'Остаток: {can}')
-            if can == 0:
-                print('Победил второй игрок!')
-                break
-
-    elif ro != ro1:
-        while can > 0:
-
-            n2 = int(input('Ход второго игрока: '))
-            can -= n2
-            print(f'Остаток: {can}')
-            if can == 0:
-                print('Победил второй игрок!')
-                break
-
-            n1 = int(input('Ход первого игрока: '))
-            can -= n1
-            print(f'Остаток: {can}')
-            if can == 0:
-                print('Победил первый игрок!')
-                break
+b = ''
+c = ''
+count = 1
+if not a:
+    c = ''
+for i in a:
+    if i != b:
+        if b:
+            c += str(count) + b
+        count = 1
+        b = i
+    else:
+        count += 1
+else:
+    c += str(count) + b
 
 
-if pl == 1:
-    if ro == ro1:
-        while can > 0:
+# path = 'HW/5/2.txt'
+# data = open(path, 'w')
+# data.writelines(c)
+# data.close()
 
-            n1 = int(input('Ход первого игрока: '))
-            can -= n1
-            print(f'Остаток: {can}')
-            if can == 0:
-                print('Победил первый игрок!')
-                break
+# path = 'HW/5/1.txt'
+# data = open(path, 'r')
+# for line in data:
+#     d = str(line)
+# data.close()
 
-            can1 = can
-            can2 = can
-            if 28 < can < 57:
-                i = 0
-                while can1 > 30:
-                    can1 = can
-                    can1 -= i
-                    i += 1
-                n2 = i
+e = ''
+f = 1
+for x in d:
+    if str(x).isdigit():
+        f += x
+        print(x)
+    else:
+        e += x * int(f)
+        f = 1
 
-            elif can2 <= 28:
-                i = 0
-                while can2 > 0:
-                    can2 = can
-                    can2 -= i
-                    if can2 == 0:
-                        break
-                    i += 1
-                n2 = i
-            else:
-                n2 = 28
-
-            print(f'Ход второго игрока: {n2}')
-            can -= n2
-            print(f'Остаток: {can}')
-            if can == 0:
-                print('Победил второй игрок!')
-                break
-
-    elif ro != ro1:
-        while can > 0:
-            can1 = can
-            can2 = can
-            if 28 < can < 57:
-                can1 = can
-                if 28 < can1 and can1 < 57:
-                    i = 0
-                    while can1 > 30:
-                        can1 = can
-                        can1 -= i
-                        i += 1
-                n2 = i
-            elif can2 <= 28:
-                i = 0
-                while can2 > 0:
-                    can2 = can
-                    can2 -= i
-                    if can2 == 0:
-                        break
-                    i += 1
-                n2 = i
-            else:
-                n2 = 28
-
-            print(f'Ход второго игрока: {n2}')
-            can -= n2
-            print(f'Остаток: {can}')
-            if can == 0:
-                print('Победил второй игрок!')
-                break
-
-            n1 = int(input('Ход первого игрока: '))
-            can -= n1
-            print(f'Остаток: {can}')
-            if can == 0:
-                print('Победил первый игрок!')
-                break
+# path = 'HW/5/3.txt'
+# data = open(path, 'w')
+# data.writelines(e)
+# data.close()
