@@ -10,25 +10,17 @@
 # 18
 
 import math
+from functools import reduce
 
 sp = []
 
-for i in range(5):
+for i in range(100):
     num = input('Введите данные: ')
-    num1 = isinstance(num, int)
+    num1 = num.isdigit()
     if num1 == True:
-        sp.append(num)
+        sp.append(int(num))
     elif num == '' or num1 == False:
         break
-
-    # if num1 == False:
-    #    sp.append(num)
-    # elif num == '' or num1 == True:
-    #     break
-
-    # if num.isdigit:
-    #     sp.append(num)
-    # elif num == ' ':
-    #     break
-# math.gcd(sp)
-print(sp)
+# for i in range(100):
+#     s = math.gcd(sp[i], sp[i+1])
+print(reduce(lambda x, y: math.gcd(x, y), sp))
