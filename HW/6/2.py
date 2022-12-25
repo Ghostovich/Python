@@ -1,7 +1,7 @@
 # Орел и решка
 
-# Дана строка текста, состоящая из букв русского алфавита "О" и "Р". 
-# Буква "О" – соответствует выпадению Орла, а буква "Р" – соответствует выпадению Решки. 
+# Дана строка текста, состоящая из букв русского алфавита "О" и "Р".
+# Буква "О" – соответствует выпадению Орла, а буква "Р" – соответствует выпадению Решки.
 # Напишите программу, которая подсчитывает наибольшее количество подряд выпавших Решек.
 
 # Формат входных данных:
@@ -17,47 +17,19 @@
 # ООООРРРРОРОРРРРРРРРООРОРОРРРРРРРРРРРРРРРРРРРРРРРРРРРРРРР      31
 
 
-a = [i for i in input('Введите данные: ').split()]
-print(a)
-# b = ''
-# c = ''
-# count = 1
-# if not a:
-#     c = ''
-# for i in a:
-#     if i != b:
-#         if b:
-#             c += str(count) + b
-#         count = 1
-#         b = i
-#     else:
-#         count += 1
-# else:
-#     c += str(count) + b
+a = [i for i in input('Введите данные: ')]
+count = 0
+b = 0
+sp = []
 
-
-# # path = 'HW/5/2.txt'
-# # data = open(path, 'w')
-# # data.writelines(c)
-# # data.close()
-
-# # path = 'HW/5/1.txt'
-# # data = open(path, 'r')
-# # for line in data:
-# #     d = str(line)
-# # data.close()
-
-# e = ''
-# f = 1
-# for x in d:
-#     if str(x).isdigit():
-#         f += x
-#         print(x)
-#     else:
-#         e += x * int(f)
-#         f = 1
-
-# # path = 'HW/5/3.txt'
-# # data = open(path, 'w')
-# # data.writelines(e)
-# # data.close()
+for j in range(len(a)):
+    for i in range(b, len(a)):
+        if a[i] == 'p':
+            count += 1
+            # b += 1
+        elif a[i] != 'p':
+            sp.append(count)
+            count = 0
+            b += 1
+            break
+print(sp)
