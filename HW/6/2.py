@@ -26,10 +26,10 @@ for j in range(len(a)):
     for i in range(b, len(a)):
         if a[i] == 'p':
             count += 1
-            # b += 1
+            b += 1
         elif a[i] != 'p':
             sp.append(count)
             count = 0
             b += 1
-            break
-print(sp)
+sp.append(count)
+print(max(sp))

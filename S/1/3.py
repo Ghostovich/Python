@@ -6,3 +6,5 @@ N = int(input("Add number:"))
 
 for i in range (-N, N+1):
     print(i, end = " ")
+
+
