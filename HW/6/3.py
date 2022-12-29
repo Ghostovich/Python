@@ -13,26 +13,11 @@
 # print(s)
 
 
+# NEW
 
-
-
-# # Напишите программу, которая будет 
-# # преобразовывать десятичное число в двоичное.
-# # Пример:
-# # - 45 -> 101101
-# # - 3 -> 11
-# # - 2 -> 10
-
-N = int(input('Введите число:'))
-# sp = []
-# while N != 0:
-#     sp.append(N%2)
-#     N = N//2
-# sp.reverse()
-# print(*sp, end='')
-
-
-sp = [i for i in range(N!=0)]
+# sp = [i for i in range(1, int(input()))]
+# s = list(map(lambda x: (1+(1/x))**x, sp))
+# print(sum(s))
 
 
 
@@ -52,28 +37,10 @@ sp = [i for i in range(N!=0)]
 
 
 
+# NEW
 
-sp = [for i in range (-N, N+1), N = int(input("Add number:"))]
-print(sp)
-
-
-
+# sp = [i for i in range((-int(input())), (int(input())+1))]
+# print(sp)
 
 
 
-
-
-# Напишите программу, которая будет принимать на вход дробь и показывать первую цифру дробной части числа.
-# Примеры:
-# o	6,78 -> 7
-# o	5 -> нет
-# o	0,34 -> 3
-
-# num = float(input("Enter number:"))
-nnum = list[lambda x: (x*10)%10, float(input("Enter number:"))]
-print(nnum)
-
-# или сразу в принте, без доп переменной либо
-
-# num = input("Enter number:").split('.')
-# print(int(num[1][0]))
