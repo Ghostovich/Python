@@ -10,3 +10,9 @@ def get_math_example():
 def view_result(result):
     print(result)
 
+def get_massa():
+    massa = input('Enter data:')
+    return massa
+
+def view_res_conv(value):
+    print(value)
