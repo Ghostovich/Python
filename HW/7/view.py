@@ -1,18 +1,18 @@
 def greeting():
-    print("Hello! Select action: 1 - Calc, 2 - Convect")
+    print("Приветствую! Выбери действие: 1 - Экспортировать контакты; 2 - Импрортировать контакты")
     select = int(input())
     return select
 
-def get_math_example():
-    primer = input('Enter data:')
-    return primer
+def get_export():
+    exp = input('Введите данные(Фамилия,Имя,Номер): ')
+    return exp
 
-def view_result(result):
-    print(result)
+def view_res_exp(res_exp):
+    print(res_exp)
 
-def get_massa():
-    massa = input('Enter data:')
-    return massa
+def get_import():
+    imp = input('Введите данные(Фамилия,Имя,Номер): ')
+    return imp
 
-def view_res_conv(value):
-    print(value)
+def view_res_imp(res_exp):
+    print(res_exp)
