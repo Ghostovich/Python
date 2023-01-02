@@ -7,12 +7,3 @@ def get_export():
     exp = input('Введите данные(Фамилия,Имя,Номер): ')
     return exp
 
-def view_res_exp(res_exp):
-    print(res_exp)
-
-def get_import():
-    imp = input('Введите данные(Фамилия,Имя,Номер): ')
-    return imp
-
-def view_res_imp(res_exp):
-    print(res_exp)
