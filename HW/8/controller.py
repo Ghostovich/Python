@@ -19,4 +19,6 @@ def main():
     elif select == 4:
         number = view.delete()
         models.delete(number)
+    elif select == 5:
+        models.export()
     logging.info('Программа отработала корректно')

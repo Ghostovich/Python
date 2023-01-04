@@ -36,3 +36,10 @@ def delete(number):
         writer = csv.writer(csvfile, delimiter = ";")
         for i in data:
             writer.writerow(i)
+
+def export():
+    path = 'HW/8/1.txt'
+    data = open(path, 'a', encoding='utf-8')
+    exp = get_list()
+    data.writelines("\n".join(map(str,exp)))
+    data.close()
