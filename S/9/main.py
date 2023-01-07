@@ -1,4 +1,5 @@
 import logging
+from token1 import token2
 
 from telegram.ext import Updater, CommandHandler, ConversationHandler, MessageHandler, Filters
 
@@ -8,7 +9,7 @@ logging.basicConfig(
 
 logger = logging.getLogger(__name__)
 
-TOKEN = '5956752552:AAHT6H3L1H7pz_VBvYU7pK6DqxAW6BphSag'
+token = token2
 
 
 def start(update, context):
@@ -50,7 +51,7 @@ def stop(update, context):
 
 
 def main():
-    updater = Updater(TOKEN)
+    updater = Updater(token)
     dp = updater.dispatcher
     calc_handler = ConversationHandler(
         entry_points=[CommandHandler('calc', calc)],
