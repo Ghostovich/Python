@@ -1,6 +1,6 @@
 import logging
-import csv
 import models
+import sqlite3
 
 from telegram.ext import Updater, CommandHandler, ConversationHandler, MessageHandler, Filters
 
@@ -21,17 +21,46 @@ def start(update, context):
         /delete - удалить данные сотрудника')
 
 
-def show(update, context):
-    return 1
 
+# conn = sqlite3.connect('students.db')
+# cursor = conn.cursor()
 
-def show1(update, context):
-    file = open("HW/9/file.csv", 'r')
-    file.read(update.message.reply_text)
-    file.close()
-    # with open("HW/9/file.csv", encoding='utf-8') as csvfile:
-    #     reader = csv.reader(csvfile, delimiter=";")
-    # update.message.reply_text(list(reader))
+# # показать всех студентов
+# cursor.execute("select * from students")
+# results = cursor.fetchall()
+# print(results)
+
+# # поиск записи
+# surname = 'Иванов'
+# cursor.execute(f"select * from students where surname like '%{surname}%'")
+# results = cursor.fetchall()
+# print(results)
+
+# # добавить студента
+# name = 'Степан'
+# surname = 'Степанов'
+# phone = 45648
+# description = 'Инженер'
+# cursor.execute(
+#     f"insert into students (name, surname, phone, description) "
+#     f"values ('{name}', '{surname}', {phone}, '{description}')")
+# conn.commit()
+
+# # удалить студента
+# id = 5
+# cursor.execute(
+#     f"delete from students where id={id}"
+# )
+# conn.commit()
+
+# # обновить данные о студенте
+# id = 3
+# cursor.execute(
+#     f"update students set name='Юрий' where id={id}"
+# )
+# conn.commit()
+# conn.close()
+
 
 
 # def calc(update, context):
@@ -42,42 +71,8 @@ def show1(update, context):
 # def calculate(update, context):
 #         value = eval(update.message.text)
 #         update.message.reply_text(value)
-
-
 #         return ConversationHandler.END
 
-
-# def add_employ_to_list(data):
-#     with open("S/8/file.csv", 'a', encoding='utf-8', newline='') as csvfile:
-#         writer = csv.writer(csvfile, delimiter = ";")
-#         writer.writerow(data)
-
-# def update_employees(number, string):
-#         with open("S/8/file.csv", encoding='utf-8', newline='') as csvfile:
-#             reader = csv.reader(csvfile, delimiter = ";")
-#             data = list(reader)
-#             data[number] = string
-#         with open("S/8/file.csv", 'w', encoding='utf-8', newline='') as csvfile:
-#             writer = csv.writer(csvfile, delimiter = ";")
-#             for i in data:
-#                 writer.writerow(i)
-
-# def delete(number):
-#     with open("S/8/file.csv", encoding='utf-8', newline='') as csvfile:
-#         reader = csv.reader(csvfile, delimiter = ";")
-#         data = list(reader)
-#         del data[number]
-#     with open("S/8/file.csv", 'w', encoding='utf-8', newline='') as csvfile:
-#         writer = csv.writer(csvfile, delimiter = ";")
-#         for i in data:
-#             writer.writerow(i)
-
-# def export():
-#     path = 'HW/8/1.txt'
-#     data = open(path, 'a', encoding='utf-8')
-#     exp = get_list()
-#     data.writelines("\n".join(map(str,exp)))
-#     data.close()
 
 
 # def conv(update, context):
@@ -99,12 +94,7 @@ def stop(update, context):
 def main():
     updater = Updater(TOKEN)
     dp = updater.dispatcher
-    show_handler = ConversationHandler(
-        entry_points=[CommandHandler('show', show)],
-        states={
-            1: [MessageHandler(Filters.text & ~Filters.command, show1)], },
-        fallbacks=[CommandHandler('stop', stop)]
-    )
+
     # calc_handler = ConversationHandler(
     #     entry_points=[CommandHandler('calc', calc)],
     #     states={
@@ -122,7 +112,6 @@ def main():
     start_handler = CommandHandler('start', start)
 
     dp.add_handler(start_handler)
-    dp.add_handler(show_handler)
     # dp.add_handler(calc_handler)
     # dp.add_handler(conv_handler)
     updater.start_polling()
