@@ -1,5 +1,4 @@
 import logging
-import token1
 
 from telegram import ReplyKeyboardMarkup, ReplyKeyboardRemove
 from telegram.ext import Updater, CommandHandler
@@ -16,7 +15,7 @@ logging.basicConfig(
 
 logger = logging.getLogger(__name__)
 
-TOKEN = token1.TOKEN
+TOKEN = ''
 
 
 def start(update, context):
